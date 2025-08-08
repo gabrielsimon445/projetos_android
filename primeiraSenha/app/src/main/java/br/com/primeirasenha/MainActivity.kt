@@ -1,6 +1,8 @@
 package br.com.primeirasenha
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.core.content.ContextCompat
@@ -9,15 +11,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val mensagem = findViewById<TextView>(R.id.mensagem);
         mensagem.text = "";
 
+        val email = findViewById<EditText>(R.id.email);
+        val password = findViewById<EditText>(R.id.password);
 
-        val email = findViewById<TextView>(R.id.email);
-        val password = findViewById<TextView>(R.id.password);
-
-        val botao = findViewById<TextView>(R.id.button);
+        val botao = findViewById<Button>(R.id.button);
 
         botao.setOnClickListener {
             if (email.text.toString().isNotBlank() && password.text.toString().isNotBlank()) {
